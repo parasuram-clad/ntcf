@@ -1,0 +1,120 @@
+/* ========== Base Styling ========== */
+.contact-hero {
+  text-align: center;
+  align-content: center;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.372), rgba(0, 0, 0, 0.228)),
+    url("../assets/projects-tease-bg.webp") center/cover no-repeat;
+  color: #fff;
+  height: 50vh;
+}
+.contact-hero h1 {
+  font-size: 3rem;
+  font-weight: normal;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.contact-hero p {
+  font-size: 1.2rem;
+}
+
+/* ========== Container Flex ========== */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 60px 10%;
+  gap: 60px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contact-img,
+.contact-info {
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+
+.contact-img img {
+  width: 100%;
+  height: auto;
+}
+
+.contact-info h3 {
+  margin-bottom: 20px;
+  color: #a2342c;
+}
+.contact-info p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: black;
+}
+.contact-info p a {
+  color: black;
+}
+.contact-info p a:hover {
+  text-decoration: underline !important;
+}
+/* ========== Google Map ========== */
+.map-container {
+  margin: 40px 0 0 0;
+}
+.map-container iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 1024px) {
+  .contact-container {
+    padding: 40px 5%;
+    gap: 40px;
+  }
+
+  .contact-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-hero p {
+    font-size: 1rem;
+  }
+
+  .map-container {
+    margin: 30px 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .contact-img,
+  .contact-info {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact-hero h1 {
+    font-size: 2rem;
+  }
+
+  .map-container iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .contact-hero p {
+    font-size: 0.95rem;
+  }
+
+  .map-container iframe {
+    height: 250px;
+  }
+}

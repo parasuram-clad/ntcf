@@ -1,0 +1,92 @@
+/* ===== Terms & Conditions Page Styles ===== */
+.terms-section {
+  background-color: #fff;
+  color: #333;
+  font-family: "Segoe UI", sans-serif;
+  padding: 60px 20px;
+}
+
+.terms-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.terms-section h1.section-title {
+  font-size: 2.5rem;
+
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.terms-section .last-updated {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.terms-section p,
+.terms-section li,
+.terms-section address {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+.terms-section h2 {
+  font-size: 1.5rem;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #222;
+
+  padding-left: 12px;
+}
+
+.terms-section ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.terms-section ul li {
+  list-style-type: disc;
+  margin-bottom: 8px;
+}
+
+.terms-section a {
+  color: #222;
+  text-decoration: none;
+}
+
+.terms-section a:hover {
+  text-decoration: underline !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .terms-section {
+    padding: 40px 15px;
+  }
+
+  .terms-section h1.section-title {
+    font-size: 2rem;
+  }
+
+  .terms-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .terms-section p,
+  .terms-section li,
+  .terms-section address {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .terms-section h1.section-title {
+    font-size: 1.75rem;
+  }
+
+  .terms-section h2 {
+    font-size: 1.15rem;
+  }
+}

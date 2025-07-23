@@ -1,0 +1,82 @@
+/* .what-we-do {
+  background-image: url("../assets/what-we-do-bg.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 50vh;
+  padding: 30px 65px;
+  position: relative;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.what-we-do {
+  background-image: url("../assets/what-we-do-bg.webp");
+  background-size: cover;
+  background-position: bottom center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 50vh;
+  padding: 30px 65px;
+  position: relative;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-position 0.4s ease-out;
+}
+
+.what-we-do-container {
+  align-content: center;
+  display: flex;
+  padding: 0px 50px;
+  align-items: center;
+  transition: transform 1s ease, opacity 1s ease;
+}
+.what-we-do-container h1 {
+  text-align: center;
+}
+.text-title {
+  display: inline-block;
+
+  will-change: transform, opacity;
+}
+
+/* ---------- Responsive Styling ---------- */
+
+/* Tablet (<= 1024px) */
+@media (max-width: 1024px) {
+  .what-we-do {
+    height: auto;
+    padding: 40px 40px;
+    text-align: center;
+  }
+
+  .what-we-do-container {
+    padding-left: 0 !important;
+  }
+
+  .what-we-do h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .what-we-do {
+    padding: 30px 20px;
+    height: auto;
+  }
+
+  .what-we-do h1 {
+    font-size: 16px;
+  }
+
+  .btn-bg {
+    font-size: 14px !important;
+    padding: 6px 12px !important;
+  }
+}

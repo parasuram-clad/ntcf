@@ -1,0 +1,74 @@
+/* Hero Section */
+.service-hero-section {
+  background-color: #a2342c;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.service-content-section {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.service-content-section h3 {
+  color: #a2342c;
+  font-weight: 600;
+}
+
+.service-content-section ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.service-content-section li {
+  margin-bottom: 10px;
+}
+
+.cta-box {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.btn-ntc {
+  background-color: #a2342c;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ntc:hover {
+  background-color: #881f1a;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .service-hero-section {
+    height: 300px; /* Updated from 200px to 300px */
+    padding: 40px 15px;
+    text-align: center;
+  }
+
+  .service-content-section {
+    padding: 20px 15px;
+  }
+
+  .service-content-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .service-content-section ul {
+    padding-left: 1rem;
+  }
+}

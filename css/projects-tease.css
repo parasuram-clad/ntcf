@@ -1,0 +1,104 @@
+/* Projects Tease Section */
+/* .projects-tease {
+  background-image: url("../assets/projects-tease-bg.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 50vh;
+  padding: 30px 65px;
+  position: relative;
+  color: white;
+  overflow: hidden;
+  align-content: center;
+} */
+.projects-tease {
+  background-image: url("../assets/projects-tease-bg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed; /* override fixed for better control */
+  height: 50vh;
+  padding: 30px 65px;
+  position: relative;
+  color: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  transition: background-position 0.4s ease-out;
+}
+
+.projects-tease-container {
+  display: flex;
+  align-items: center;
+}
+.projects-tease-container h1 {
+  text-align: center;
+}
+/* Scroll Icon */
+.what-scroll-icon {
+  position: absolute;
+  right: 100px;
+  bottom: 90px;
+  text-align: center;
+}
+
+.what-scroll-icon-img {
+  width: 60px;
+}
+/* Tablet (<= 1024px) */
+@media (max-width: 1024px) {
+  .projects-tease {
+    padding: 30px 40px;
+    height: auto;
+  }
+
+  .projects-tease-container {
+    padding-left: 0 !important;
+    text-align: left;
+  }
+
+  .projects-tease h1 {
+    font-size: 2rem;
+  }
+
+  .what-scroll-icon {
+    right: 40px;
+    bottom: 60px;
+  }
+
+  .what-scroll-icon-img {
+    width: 50px;
+  }
+}
+
+/* Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .projects-tease {
+    padding: 20px;
+  }
+
+  .projects-tease h1 {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .projects-tease-container {
+    padding-left: 0 !important;
+    text-align: center;
+    align-items: center;
+  }
+
+  .btn-bg {
+    font-size: 12px;
+    padding: 0x 10px;
+  }
+
+  .what-scroll-icon {
+    right: 20px;
+    bottom: 40px;
+  }
+
+  .what-scroll-icon-img {
+    width: 40px;
+  }
+}

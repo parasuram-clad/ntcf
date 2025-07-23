@@ -1,0 +1,446 @@
+/* Hero Section */
+.service-hero-section {
+  background-color: #a2342c;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Content Area */
+.service-content-section {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.service-content-section h3 {
+  color: #a2342c;
+  font-weight: 600;
+}
+
+.service-content-section ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.service-content-section li {
+  margin-bottom: 10px;
+}
+
+/* CTA Box */
+.cta-box {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+.section-title {
+  color: #a2342c;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+/* Cards Container */
+.service-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+/* Property Card Style */
+.property-card {
+  width: 350px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  box-shadow: 15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+  background-color: #a2342c;
+}
+
+/* Top Half Image */
+.property-image {
+  height: 150px; /* top section height */
+  width: 100%;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Bottom Description */
+.property-description {
+  background-color: #a2342c;
+  height: 200px; /* bottom section height */
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 1em;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.property-description h5 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.property-description p {
+  font-size: 17px;
+  color: #dedede;
+  line-height: 1.5;
+}
+
+/* Hover Animations */
+.property-card:hover .property-description {
+  height: 0;
+  padding: 0;
+}
+
+.property-card:hover .property-image {
+  height: 400px;
+}
+
+.why-ntc-section {
+  padding: 60px 20px;
+}
+
+.why-ntc-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-ntc-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #a2342c;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.why-ntc-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ✅ Exactly 2 columns */
+  gap: 30px;
+}
+
+.why-feature-box {
+  display: flex;
+  align-items: flex-start;
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.127);
+  transition: transform 0.3s ease;
+}
+
+.why-feature-box:hover {
+  transform: translateY(-5px);
+}
+
+.why-icon-circle {
+  min-width: 50px;
+  height: 50px;
+  background-color: #a2342c;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.why-text h4 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+}
+
+.why-text p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+/* ===============================
+   Responsive Styles (≤ 1200px)
+================================ */
+/* =====================================
+   Large Tablets / Small Laptops (≤1200px)
+===================================== */
+@media (max-width: 1200px) {
+  .property-card {
+    width: 320px;
+    height: 380px;
+  }
+
+  .property-image {
+    height: 140px;
+  }
+
+  .property-card:hover .property-image {
+    height: 380px;
+  }
+
+  .property-description {
+    height: 240px;
+  }
+
+  .property-description h5 {
+    font-size: 19px;
+  }
+
+  .property-description p {
+    font-size: 16px;
+  }
+}
+
+/* =====================================
+   Tablets & Large Mobiles (≤992px)
+===================================== */
+@media (max-width: 992px) {
+  .property-card {
+    width: 300px;
+    height: 360px;
+  }
+
+  .property-image {
+    height: 130px;
+  }
+
+  .property-card:hover .property-image {
+    height: 360px;
+  }
+
+  .property-description {
+    height: 230px;
+  }
+
+  .property-description h5 {
+    font-size: 18px;
+  }
+
+  .property-description p {
+    font-size: 14.5px;
+  }
+
+  .why-text h4 {
+    font-size: 1rem;
+  }
+
+  .why-text p {
+    font-size: 0.9rem;
+  }
+}
+
+/* =====================================
+   Small Tablets & Large Phones (≤768px)
+===================================== */
+@media (max-width: 768px) {
+  .property-card {
+    width: 90%;
+    height: 350px;
+  }
+
+  .property-image {
+    height: 120px;
+  }
+
+  .property-card:hover .property-image {
+    height: 350px;
+  }
+
+  .property-description {
+    height: 230px;
+  }
+
+  .property-description h5 {
+    font-size: 22px;
+  }
+
+  .property-description p {
+    font-size: 16px;
+  }
+
+  .why-text h4 {
+    font-size: 0.95rem;
+  }
+
+  .why-text p {
+    font-size: 0.85rem;
+  }
+
+  .why-ntc-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* =====================================
+   Mobile Devices (≤576px)
+===================================== */
+@media (max-width: 576px) {
+  .property-card {
+    width: 70%;
+    height: 300px;
+    margin: 0 auto; /* Center the card */
+  }
+
+  .property-image {
+    height: 150px;
+  }
+
+  .property-card:hover .property-image {
+    height: 300px;
+  }
+
+  .property-description {
+    height: 150px;
+    padding: 0.8em;
+  }
+
+  .property-description h5 {
+    font-size: 15px;
+  }
+
+  .property-description p {
+    font-size: 13px;
+  }
+
+  .why-text h4 {
+    font-size: 0.9rem;
+  }
+
+  .why-text p {
+    font-size: 0.8rem;
+  }
+
+  .why-ntc-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Responsive styles */
+
+/* Tablets (768px - 991px) */
+@media (max-width: 991px) {
+  .why-ntc-features {
+    grid-template-columns: 1fr; /* Single column */
+    gap: 25px;
+  }
+
+  .why-ntc-title {
+    font-size: 1.9rem;
+    margin-bottom: 30px;
+  }
+
+  .why-feature-box {
+    padding: 20px 15px;
+  }
+
+  .why-icon-circle {
+    min-width: 45px;
+    height: 45px;
+    font-size: 20px;
+    margin-right: 12px;
+  }
+
+  .why-text h4 {
+    font-size: 1rem;
+  }
+
+  .why-text p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile devices (max-width: 767px) */
+@media (max-width: 767px) {
+  .why-ntc-section {
+    padding: 40px 15px;
+  }
+
+  .why-ntc-title {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .why-ntc-features {
+    grid-template-columns: 1fr; /* single column */
+    gap: 20px;
+  }
+
+  .why-feature-box {
+    flex-direction: row;
+    padding: 15px 12px;
+  }
+
+  .why-icon-circle {
+    min-width: 40px;
+    height: 40px;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+
+  .why-text h4 {
+    font-size: 0.95rem;
+  }
+
+  .why-text p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Responsive adjustments */
+
+/* Tablets */
+@media (max-width: 991px) {
+  .service-hero-section {
+    padding: 60px 15px;
+  }
+
+  .service-hero-section h1 {
+    font-size: 2.4rem;
+  }
+
+  .service-hero-section p.lead {
+    font-size: 1.1rem;
+  }
+
+  .service-content-section p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 767px) {
+  .service-hero-section {
+    padding: 40px 10px;
+  }
+
+  .service-hero-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .service-hero-section p.lead {
+    font-size: 0.95rem;
+  }
+
+  .service-content-section p {
+    font-size: 0.9rem;
+    padding: 0 10px;
+    text-align: justify;
+  }
+}

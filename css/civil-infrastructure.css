@@ -1,0 +1,366 @@
+/* Hero Section */
+.service-hero-section {
+  background-color: #a2342c;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Content Area */
+.service-content-section {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.service-content-section h3 {
+  color: #a2342c;
+  font-weight: 600;
+}
+
+.service-content-section ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.service-content-section li {
+  margin-bottom: 10px;
+}
+
+/* CTA Box */
+.cta-box {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+.section-title {
+  color: #a2342c;
+  font-weight: 600;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+/* Cards Container */
+.service-cards-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #a2342c;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Flex container */
+.service-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center; /* Center-align cards */
+}
+
+/* Each card */
+.property-card {
+  display: flex;
+  flex: 0 1 calc(50% - 15px); /* 2 cards per row with spacing */
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease,
+    background-color 0.4s ease; /* add background-color transition */
+  max-width: 550px;
+  position: relative;
+}
+
+.property-card:hover {
+  background-color: #a2342c; /* darker shade or your preferred hover color */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* Image side */
+.property-image {
+  width: 40%;
+  min-height: 200px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s ease;
+}
+
+.property-card:hover .property-image {
+  transform: scale(1.05); /* Zoom image on hover */
+}
+
+/* Text side */
+.property-description {
+  width: 60%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.property-description h5 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #a2342c;
+  font-weight: 600;
+}
+.property-card:hover .property-description h5 {
+  color: #ffffff; /* Change text color on hover */
+}
+
+.property-card:hover .property-description p {
+  color: #ffffff; /* Change text color on hover */
+}
+
+.property-description p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/*  Tablet: stack cards vertically but keep layout clean */
+@media (max-width: 991px) {
+  .property-card {
+    flex: 0 1 100%;
+  }
+
+  .property-description {
+    padding: 18px;
+  }
+
+  .property-description h5 {
+    font-size: 1rem;
+  }
+
+  .property-description p {
+    font-size: 0.9rem;
+  }
+}
+
+/*  Mobile (≤ 767px): vertical card layout */
+@media (max-width: 767px) {
+  .property-card {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .property-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .property-description {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .property-description h5 {
+    font-size: 0.95rem;
+  }
+
+  .property-description p {
+    font-size: 0.88rem;
+  }
+}
+
+/*  Small mobiles (≤ 480px): tighter layout and font sizes */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .property-description {
+    padding: 12px;
+  }
+
+  .property-description h5 {
+    font-size: 0.9rem;
+  }
+
+  .property-description p {
+    font-size: 0.82rem;
+  }
+}
+
+/* Responsive adjustments */
+
+/* Tablets */
+@media (max-width: 991px) {
+  .service-hero-section {
+    padding: 60px 15px;
+  }
+
+  .service-hero-section h1 {
+    font-size: 2.4rem;
+  }
+
+  .service-hero-section p.lead {
+    font-size: 1.1rem;
+  }
+
+  .service-content-section p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 767px) {
+  .service-hero-section {
+    padding: 40px 10px;
+  }
+
+  .service-hero-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .service-hero-section p.lead {
+    font-size: 0.95rem;
+  }
+
+  .service-content-section p {
+    font-size: 0.9rem;
+
+    text-align: left;
+  }
+}
+.why-choose-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.why-title {
+  font-size: 2rem;
+  color: #a2342c;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+/* Flex wrapper */
+.why-card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Card */
+.why-card {
+  flex: 0 1 calc(40% - 20px);
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid #a2342c;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+}
+
+.why-icon {
+  font-size: 32px;
+  color: #a2342c;
+  margin-bottom: 20px;
+}
+
+.why-card h4 {
+  color: #a2342c;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/*  Tablets and small laptops (≤991px): 2 cards per row */
+@media (max-width: 991px) {
+  .why-card {
+    flex: 0 1 calc(50% - 15px);
+    padding: 25px 20px;
+  }
+
+  .why-card-grid {
+    padding: 0 10px;
+  }
+}
+
+/*  Mobiles (≤768px): 2 cards per row */
+@media (max-width: 768px) {
+  .why-card {
+    flex: 0 1 calc(50% - 15px); /*  2 per row on mobile too */
+    padding: 20px 18px;
+  }
+
+  .why-title,
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+
+  .why-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .why-card h4 {
+    font-size: 1rem;
+  }
+
+  .why-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/*  Very small mobiles (≤480px): 1 card per row */
+@media (max-width: 480px) {
+  .why-card {
+    flex: 0 1 100%;
+    padding: 18px 15px;
+  }
+
+  .why-title {
+    font-size: 1.4rem;
+  }
+
+  .why-icon {
+    font-size: 26px;
+  }
+
+  .why-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .why-card p {
+    font-size: 0.85rem;
+  }
+}
+.btn-ntc {
+  background-color: #a2342c !important;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ntc:hover {
+  background-color: #881f1a;
+  color: #fff;
+}

@@ -1,0 +1,97 @@
+.what-we-focus {
+  background-image: url("../assets/what-we-focus-bg.webp");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  height: 50vh;
+  padding: 0px 65px;
+  position: relative;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-position 0.4s ease-out;
+}
+
+.what-we-focus-container {
+  display: flex;
+  align-items: center;
+}
+.what-we-focus-container h1 {
+  text-align: center;
+}
+/* Scroll Icon */
+.what-scroll-icon {
+  position: absolute;
+  right: 100px;
+  bottom: 90px;
+  text-align: center;
+}
+.what-scroll-icon-img {
+  width: 60px;
+}
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .what-we-focus {
+    padding: 30px 40px;
+    height: auto;
+    text-align: center;
+  }
+
+  .what-we-focus-container {
+    padding-left: 0 !important;
+    padding-top: 60px !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .what-we-focus h1 {
+    font-size: 2rem;
+  }
+
+  .what-scroll-icon {
+    right: 40px;
+    bottom: 60px;
+  }
+
+  .what-scroll-icon-img {
+    width: 50px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .what-we-focus {
+    padding: 20px;
+    height: auto;
+  }
+
+  .what-we-focus-container {
+    padding-left: 0 !important;
+    padding-top: 40px !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .what-we-focus h1 {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .btn-bg {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .what-scroll-icon {
+    right: 20px;
+    bottom: 40px;
+  }
+
+  .what-scroll-icon-img {
+    width: 40px;
+  }
+}
