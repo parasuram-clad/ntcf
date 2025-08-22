@@ -1,13 +1,22 @@
 const header = document.querySelector(".header");
 const logo = document.getElementById("siteLogo"); // Get the logo image
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 10) {
-    header.classList.add("sticky");
-    logo.src = "assets/NTC-Infra-Logo.webp"; // Sticky logo
-  } else {
-    header.classList.remove("sticky");
-    logo.src = "assets/NTC-Infra-Logo-white.webp"; // Default logo
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector(".header");
+  const logo = document.getElementById("siteLogo");
+
+  if (header) {
+    window.addEventListener("scroll", () => {
+      const isScrolled = window.scrollY > 10;
+
+      header.classList.toggle("sticky", isScrolled);
+
+      if (logo) {
+        logo.src = isScrolled
+          ? "assets/NTC-Infra-Logo.webp"
+          : "assets/NTC-Infra-Logo-white.webp";
+      }
+    });
   }
 });
 
@@ -33,4 +42,23 @@ hamburger.addEventListener("click", () => {
 
 closeBtn.addEventListener("click", () => {
   mobileNav.classList.remove("show");
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const footer = document.querySelector(".footer-section");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          footer.classList.add("visible");
+        } else {
+          footer.classList.remove("visible");
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  observer.observe(footer);
 });

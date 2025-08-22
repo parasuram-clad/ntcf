@@ -1,0 +1,14 @@
+{
+  "html": {
+    "editor.formatOnSave": true,
+    "unformatted": [
+      "meta",
+      "link",
+      "img",
+      "br",
+      "hr",
+      "input"
+    ],
+    "self_closing_tag": false
+  }
+}

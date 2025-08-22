@@ -10,7 +10,7 @@
 
 /* Content Area */
 .service-content-section {
-  font-size: 1rem;
+  font-size: 18px;
   line-height: 1.7;
   color: #333;
 }
@@ -217,7 +217,7 @@
   }
 
   .service-hero-section h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .service-hero-section p.lead {
@@ -363,4 +363,60 @@
 .btn-ntc:hover {
   background-color: #881f1a;
   color: #fff;
+}
+
+/* Initial hidden state */
+.service-hero-section h1,
+.service-hero-section p {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+/* Animate when in view */
+.service-hero-section.animate-in h1 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.service-hero-section.animate-in p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+/* Fade-up animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initial state for cards */
+.property-card {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* When in view */
+.property-card.animate-in {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+/* Initial state for cards */
+.why-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animate in */
+.why-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }

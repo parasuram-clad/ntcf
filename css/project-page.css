@@ -17,6 +17,7 @@
   font-size: 3rem;
   color: #fff;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .projects-hero-section p {
@@ -54,7 +55,7 @@
   font-weight: bold;
 }
 .project-content p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   color: #444;
 }
@@ -160,4 +161,42 @@
   .carousel-controls {
     bottom: 5px;
   }
+}
+
+.projects-heading,
+.projects-subtitle {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.projects-animate.animate-in .projects-heading {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.projects-animate.animate-in .projects-subtitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+
+/* Initial state */
+.slide-left,
+.slide-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.8s ease-out;
+}
+
+.slide-left {
+  transform: translateX(-60px);
+}
+
+/* When in view */
+.animate-in .slide-left,
+.animate-in .slide-right {
+  opacity: 1;
+  transform: translateX(0);
 }

@@ -21,7 +21,7 @@
   padding: 30px 65px;
   position: relative;
   color: white;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   transition: background-position 0.4s ease-out;
@@ -90,7 +90,7 @@
 
   .btn-bg {
     font-size: 12px;
-    padding: 0x 10px;
+    padding: 0px 10px;
   }
 
   .what-scroll-icon {
@@ -101,4 +101,27 @@
   .what-scroll-icon-img {
     width: 40px;
   }
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initial hidden state */
+.projects-tease-container {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: none;
+}
+
+/* When visible */
+.projects-tease-container.visible {
+  animation: fadeSlideUp 0.8s ease-out forwards;
 }

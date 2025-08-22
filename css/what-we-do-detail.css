@@ -176,3 +176,88 @@
     font-size: 13px;
   }
 }
+
+@keyframes fadeSlideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeSlideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Initial hidden states */
+.what-we-do-detail-left,
+.what-we-do-detail-bottom,
+.what-we-do-detail-block {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+/* Animate Left Block */
+.what-we-do-detail-left.visible {
+  animation: fadeSlideLeft 0.8s ease-out forwards;
+}
+
+/* Animate Right Block */
+.what-we-do-detail-bottom.visible {
+  animation: fadeSlideRight 0.8s ease-out forwards;
+}
+
+/* Initial state for all */
+.what-we-do-detail-block {
+  opacity: 0;
+  transform: translateY(40px); /* default for small screens */
+}
+
+/* Animate in (for < 768px) */
+.what-we-do-detail-block.visible {
+  animation: fadeSlideUp 0.6s ease-out forwards;
+}
+
+/* Keyframes for vertical slide */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* On larger screens: animate from left */
+@media (min-width: 768px) {
+  .what-we-do-detail-block {
+    transform: translateX(-40px);
+  }
+
+  .what-we-do-detail-block.visible {
+    animation: fadeSlideLeft 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeSlideLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}

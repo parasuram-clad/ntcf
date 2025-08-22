@@ -30,11 +30,11 @@
   }
 
   .ourteam-hero-section h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .ourteam-hero-section p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -46,6 +46,7 @@
   background-position: center;
   min-height: 900px;
   padding: 40px 10px;
+  overflow: hidden;
 }
 /* Default: hidden for all screen sizes */
 .vertical-text {
@@ -57,28 +58,28 @@
   .vertical-text {
     display: block;
     position: absolute;
-    font-size: 220px;
+    font-size: 410px;
     font-weight: 900;
     color: rgba(0, 0, 0, 0.06);
     text-transform: uppercase;
     white-space: nowrap;
     z-index: 0;
     pointer-events: none;
-    letter-spacing: 10px;
+    letter-spacing: 50px;
     overflow: hidden;
   }
 
   .left-text {
     transform: rotate(-90deg);
-    left: -120px;
-    top: 50%;
+    left: -180px;
+    bottom: -150%;
     transform-origin: left center;
   }
 
   .right-text {
     transform: rotate(90deg);
-    right: -120px;
-    top: 10%;
+    right: -180px;
+    top: 40%;
     transform-origin: right center;
   }
 }
@@ -87,7 +88,7 @@
   width: 60%;
   margin: auto;
   border: 1px solid #bdbbbb70;
-  padding-bottom: 130px;
+  padding-bottom: 50px;
   border-top: none;
 }
 .ourteam-title-box {
@@ -101,7 +102,7 @@
   font-size: 45px;
   font-weight: bold;
   color: #a2342c;
-  text-align: left;
+  text-align: center;
   margin-bottom: 30px;
 }
 
@@ -143,14 +144,14 @@
 }
 
 .ourteam-text {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.6;
   margin-bottom: 10px;
   padding-right: 10px;
   color: #6f6f6f;
 }
 .ourteam-text-align {
-  text-align: left;
+  text-align: justify;
 }
 /* ourteam-section2 */
 
@@ -163,7 +164,7 @@
   align-content: center;
   border: 1px solid #bdbbbb70;
   border-bottom: none;
-  padding-bottom: 10px;
+  padding-bottom: 50px;
 }
 .point-text {
   color: #6f6f6f !important;
@@ -201,10 +202,16 @@
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 30px;
-  margin-top: 80px;
+  /* margin-top: 10px; */
   text-align: right;
 }
-
+.ourteam-member-2 {
+  margin-top: 0px;
+  text-align: left;
+}
+.no-space {
+  margin-top: 0px;
+}
 .ourteam-info {
   flex: 1;
   padding-left: 10px;
@@ -310,21 +317,17 @@
   text-align: right;
 }
 
-/* ourteam-section5 */
-.ourteam-section5 {
-  width: 60%;
-  height: 200px;
-  margin: auto;
-  padding: 50px 20px;
-  padding-bottom: 50px;
-  text-align: center;
-  position: relative;
-  align-content: center;
+.flipped {
   border: 1px solid #bdbbbb70;
-  border-bottom: none;
-  border-left: none;
-  border-top: none;
 }
+.ourteam-signature {
+  display: block;
+
+  font-weight: bold;
+  font-style: italic;
+  text-align: right;
+}
+
 @media (max-width: 1357px) and (min-width: 1000px) {
   .ourteam-con {
     padding: 40px 50px;
@@ -364,7 +367,9 @@
     margin-top: 0px;
     align-items: center;
   }
-
+  .ourteam-member-2 {
+    flex-direction: column !important;
+  }
   .ourteam-heading-box {
     width: 90%;
     background-color: #fff;
@@ -438,6 +443,10 @@
   }
   .ourteam-member {
     flex-direction: column-reverse;
+  }
+  .ourteam-member-2 {
+    margin-top: 0px !important;
+    flex-direction: column !important;
   }
   .session3-ourteam-info {
     padding-right: 0;
@@ -528,4 +537,155 @@
   .session-divider {
     width: 90%;
   }
+}
+
+/* Animation For the hero section */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-heading,
+.hero-subtitle {
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: opacity, transform;
+}
+
+.hero-animate.animate-in .hero-heading {
+  animation: fadeSlideUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.hero-animate.animate-in .hero-subtitle {
+  animation: fadeSlideUp 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* Animation for the ourteam section1 */
+/* Keyframes for Image and Text Animations */
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); /* Start off-screen */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End at normal position */
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); /* Start from below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End at normal position */
+  }
+}
+
+/* Initial State (hidden) */
+.ourteam-content,
+.ourteam-image-wrapper {
+  opacity: 0;
+  transform: translateY(30px); /* Off by default */
+  transition: all 0.8s ease-out;
+}
+
+/* Image Animation (Slide from Left) */
+.ourteam-image-wrapper {
+  opacity: 0;
+  transform: translateX(-50px); /* Off to the left initially */
+}
+
+.ourteam-section.visible .ourteam-image-wrapper {
+  animation: slideFromLeft 0.8s ease-out forwards; /* Animate image from left */
+  animation-delay: 0.3s; /* Delay for better effect */
+}
+
+/* Text Animation (Fade up) */
+.ourteam-content {
+  opacity: 0;
+  transform: translateY(30px); /* Initially below */
+}
+
+.ourteam-section.visible .ourteam-content {
+  animation: fadeUp 0.8s ease-out forwards; /* Fade up effect */
+  animation-delay: 0.5s; /* Delay for the text */
+}
+
+/* Animate from left */
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animate from below */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initial state */
+.team-animate .ourteam-photo,
+.team-animate .ourteam-info {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+/* On scroll into view */
+.team-animate.visible .ourteam-photo {
+  animation: slideFromLeft 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.team-animate.visible .ourteam-info {
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+/* Animation for the ourteam section2 */
+/* Initial hidden state */
+.team-animate-2 .ourteam-info {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.team-animate-2 .team-img-right {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all 1s ease-out;
+}
+
+/* Animate into view */
+.team-animate-2.animate-in .ourteam-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-animate-2.animate-in .team-img-right {
+  opacity: 1;
+  transform: translateX(0);
 }

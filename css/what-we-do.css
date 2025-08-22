@@ -80,3 +80,28 @@
     padding: 6px 12px !important;
   }
 }
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initial state */
+.what-we-do-container {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: none;
+}
+
+/* Visible state */
+.what-we-do-container.visible {
+  animation: fadeSlideUp 0.8s ease-out;
+  opacity: 1;
+  transform: translateY(0);
+}

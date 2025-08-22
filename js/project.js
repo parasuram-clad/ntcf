@@ -1,90 +1,70 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const allProjects = document.querySelectorAll(".section5-project");
+  const slider = document.getElementById("projectSlider");
+  const projects = document.querySelectorAll(".project");
+  const totalProjects = projects.length;
 
-  allProjects.forEach((project) => {
-    const imagesContainer = project.querySelector(".carousel-images");
-    const images = imagesContainer.querySelectorAll("img");
-    const dotsContainer = project.querySelector(".carousel-dots");
-    const nextBtn = project.querySelector(".carousel-arrow.next");
-    const prevBtn = project.querySelector(".carousel-arrow.prev");
+  // Clone first and last slides
+  const firstClone = projects[0].cloneNode(true);
+  const lastClone = projects[totalProjects - 1].cloneNode(true);
 
-    const totalSlides = images.length;
-    let currentSlide = 0;
-    let autoSlideInterval;
+  slider.appendChild(firstClone);
+  slider.insertBefore(lastClone, projects[0]);
 
-    // Generate dots
-    dotsContainer.innerHTML = "";
-    for (let i = 0; i < totalSlides; i++) {
-      const dot = document.createElement("span");
-      dot.classList.add("dot");
-      dot.setAttribute("data-index", i);
-      dotsContainer.appendChild(dot);
+  const allSlides = document.querySelectorAll(".project");
+  const totalSlides = allSlides.length;
+
+  let currentIndex = 1; // Start at "real" first project (after lastClone)
+  let autoSlideInterval;
+  const slideWidth = 100;
+
+  // Set initial position
+  slider.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+
+  function goToSlide(index) {
+    slider.style.transition = "transform 0.6s ease-in-out";
+    slider.style.transform = `translateX(-${index * slideWidth}%)`;
+    currentIndex = index;
+  }
+
+  function nextProject() {
+    if (currentIndex >= totalSlides - 1) return; // Prevent overflow
+    goToSlide(currentIndex + 1);
+  }
+
+  function prevProject() {
+    if (currentIndex <= 0) return; // Prevent underflow
+    goToSlide(currentIndex - 1);
+  }
+
+  // Transition end – handle clones
+  slider.addEventListener("transitionend", () => {
+    if (allSlides[currentIndex] === firstClone) {
+      slider.style.transition = "none";
+      currentIndex = 1; // Jump to real first
+      slider.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
     }
-
-    const dots = dotsContainer.querySelectorAll(".dot");
-
-    function updateDots(index) {
-      dots.forEach((dot) => dot.classList.remove("active"));
-      if (dots[index]) dots[index].classList.add("active");
+    if (allSlides[currentIndex] === lastClone) {
+      slider.style.transition = "none";
+      currentIndex = totalProjects; // Jump to real last
+      slider.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
     }
-
-    function showSlide(index) {
-      if (index < 0 || index >= totalSlides) return;
-
-      const slideWidth = imagesContainer.clientWidth; // Dynamically get container width
-      imagesContainer.style.transition = "transform 0.6s ease-out";
-      imagesContainer.style.transform = `translateX(-${index * slideWidth}px)`;
-
-      updateDots(index);
-      currentSlide = index;
-    }
-
-    function nextSlide() {
-      const nextIndex = (currentSlide + 1) % totalSlides;
-      showSlide(nextIndex);
-    }
-
-    function prevSlide() {
-      const prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
-      showSlide(prevIndex);
-    }
-
-    function startAutoSlide() {
-      autoSlideInterval = setInterval(nextSlide, 5000);
-    }
-
-    function restartAutoSlide() {
-      clearInterval(autoSlideInterval);
-      startAutoSlide();
-    }
-
-    // Arrow navigation
-    nextBtn?.addEventListener("click", () => {
-      nextSlide();
-      restartAutoSlide();
-    });
-
-    prevBtn?.addEventListener("click", () => {
-      prevSlide();
-      restartAutoSlide();
-    });
-
-    // Dot navigation
-    dotsContainer?.addEventListener("click", (e) => {
-      if (e.target.classList.contains("dot")) {
-        const index = parseInt(e.target.dataset.index);
-        showSlide(index);
-        restartAutoSlide();
-      }
-    });
-
-    // Recalculate position on window resize
-    window.addEventListener("resize", () => {
-      showSlide(currentSlide);
-    });
-
-    // Initialize carousel
-    showSlide(0);
-    startAutoSlide();
   });
+
+  // Buttons
+  document.getElementById("nextBtn").addEventListener("click", nextProject);
+  document.getElementById("prevBtn").addEventListener("click", prevProject);
+
+  // Auto slide
+  function startAutoSlide() {
+    if (!autoSlideInterval) {
+      autoSlideInterval = setInterval(nextProject, 5000);
+    }
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = null;
+  }
+
+  startAutoSlide();
 });

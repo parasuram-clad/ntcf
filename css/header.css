@@ -72,23 +72,24 @@
   gap: 30px;
 }
 
-.navbar a,
+.header .navbar a,
 .dropdown-toggle {
   color: #ffffff;
   font-size: 16px;
   text-decoration: none;
-  font-weight: 600;
-
+  font-weight: 500 !important; /* or 300, based on your design */
   cursor: pointer;
   padding: 10px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.navbar a:hover,
-.navbar a.active,
-.dropdown-toggle:hover {
+.header .navbar a:hover,
+.header-style .navbar a:hover,
+.header .navbar a.active,
+.header-style .navbar a.active,
+.header .dropdown-toggle:hover .header-style .dropdown-toggle:hover {
   color: #a2342c;
-  font-weight: bold;
+  font-weight: 700 !important;
 
   transform: translateY(-2px);
 }
@@ -134,7 +135,7 @@
 
 .dropdown-menu a:hover {
   background-color: #f8f8f8;
-  transform: translate(-5);
+  transform: translateY(-3px);
 }
 
 .dropdown-divider {
@@ -173,6 +174,7 @@
 
 .header.sticky .navbar a {
   color: #000000;
+  font-weight: 600 !important;
 }
 .header.sticky .navbar a.active {
   color: #a2342c;
@@ -286,22 +288,26 @@
   }
 }
 @media (max-width: 1200px) {
-  .header-style {
+  .header-style,
+  .header {
     padding: 0 60px;
   }
 }
 @media (max-width: 992px) {
-  .header-style {
+  .header-style,
+  .header {
     padding: 0 40px;
   }
 }
 @media (max-width: 768px) {
-  .header-style {
+  .header-style,
+  .header {
     padding: 0 25px;
   }
 }
 @media (max-width: 576px) {
-  .header-style {
+  .header-style,
+  .header {
     padding: 0 15px;
   }
 }

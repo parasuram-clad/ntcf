@@ -36,11 +36,11 @@
   }
 
   .aboutus-hero-section h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .aboutus-hero-section p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -153,7 +153,7 @@
 }
 
 .aboutus-wepossibilities-description {
-  font-size: 15px;
+  font-size: 18px;
   color: #444;
   line-height: 1.8;
   text-align: left;
@@ -234,7 +234,7 @@
   }
 
   .aboutus-wepossibilities-description {
-    font-size: 14.5px;
+    font-size: 15px;
     padding-right: 30px;
     line-height: 1.7;
   }
@@ -245,7 +245,7 @@
 .aboutus-vmv {
   width: 100%;
   background-color: #fff;
-  padding: 60px 20px;
+  padding: 0px 20px 60px 20px;
 }
 
 .aboutus-vmv-container {
@@ -278,9 +278,8 @@
 }
 
 .aboutus-vmv-image {
-  margin-top: -180px;
   width: 100%;
-  height: auto;
+  height: 600px;
   object-fit: cover;
   display: block;
 }
@@ -312,7 +311,7 @@
 
 /* Text */
 .aboutus-vmv-text {
-  font-size: 15px;
+  font-size: 18px;
   color: #444;
   line-height: 1.8;
   margin-top: 10px;
@@ -364,7 +363,7 @@
 
   .aboutus-vmv-image {
     width: 100%;
-    margin-top: -100px; /* reduced from -180px for better fit */
+    /* reduced from -180px for better fit */
   }
 
   .aboutus-vmv-heading h2 {
@@ -542,7 +541,7 @@
 }
 @media (max-width: 1024px) {
   .aboutus-vmv-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 30px;
   }
   .aboutus-vmv {
@@ -576,7 +575,7 @@
   .aboutus-vmv-image {
     margin-top: 0;
     width: 100%;
-    max-height: 300px;
+    height: 600px;
     object-fit: cover;
   }
   .aboutus-vmv-heading-right {
@@ -609,7 +608,6 @@
   }
 
   .aboutus-vmv-text {
-    font-size: 13px;
     text-align: justify;
   }
 
@@ -634,4 +632,71 @@
   .aboutus-vmv-image {
     max-height: 220px;
   }
+}
+/* about us section  animation*/
+/* Initial hidden state */
+.aboutus-heading,
+.aboutus-subtitle {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+/* Animate when in view */
+.aboutus-animate.animate-in .aboutus-heading {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.aboutus-animate.animate-in .aboutus-subtitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+/* Initial state: hidden and moved left */
+.animate-left {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: all 0.8s ease-out;
+}
+
+/* When in view: visible and original position */
+.animate-left.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* Initial hidden states */
+.vmv-animate-left,
+.vmv-animate-right,
+.vmv-animate-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.vmv-animate-left {
+  transform: translateX(-80px);
+}
+.vmv-animate-right {
+  transform: translateX(80px);
+}
+.vmv-animate-fade {
+  transform: translateY(40px);
+}
+
+/* When visible */
+.vmv-animate-in {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+.vmv-animate-item {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 0.8s ease-out;
+}
+
+.vmv-animate-item.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
