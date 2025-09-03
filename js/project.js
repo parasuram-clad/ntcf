@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Auto slide
   function startAutoSlide() {
     if (!autoSlideInterval) {
-      autoSlideInterval = setInterval(nextProject, 5000);
+      autoSlideInterval = setInterval(nextProject, 10000);
     }
   }
 
@@ -66,5 +66,5 @@ document.addEventListener("DOMContentLoaded", () => {
     autoSlideInterval = null;
   }
 
-  startAutoSlide();
+  // startAutoSlide();
 });
