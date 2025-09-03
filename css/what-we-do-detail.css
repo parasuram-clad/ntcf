@@ -211,6 +211,20 @@
     }
   }
 }
+
+/* For screens smaller than 1200px, override to use translateX(0px) */
+@media (max-width: 1200px) {
+  @keyframes fadeSlideRight {
+    0% {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+}
 /* Initial hidden states */
 .what-we-do-detail-left,
 .what-we-do-detail-bottom,
