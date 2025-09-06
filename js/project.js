@@ -66,5 +66,5 @@ document.addEventListener("DOMContentLoaded", () => {
     autoSlideInterval = null;
   }
 
-  // startAutoSlide();
+  startAutoSlide();
 });
